@@ -22,6 +22,5 @@
 /yarn-error.log
 
 .byebug_history
-Будет удалено .idea/
-Будет удалено tmp/
-.idea
+
+
