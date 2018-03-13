@@ -16,6 +16,7 @@
 .idea
 /tmp/*
 !/log/.keep
+config/database.yml
 !/tmp/.keep
 
 /node_modules
