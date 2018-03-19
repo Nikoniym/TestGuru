@@ -44,9 +44,9 @@ ActiveRecord::Schema.define(version: 20180316172257) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "category_id"
-    t.bigint "user_id"
+    t.bigint "author_id"
+    t.index ["author_id"], name: "index_tests_on_author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
-    t.index ["user_id"], name: "index_tests_on_user_id"
   end
 
   create_table "user_tests", force: :cascade do |t|
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20180316172257) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "tests", "users"
+  add_foreign_key "tests", "users", column: "author_id"
   add_foreign_key "user_tests", "tests"
   add_foreign_key "user_tests", "users"
 end
