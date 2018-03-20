@@ -5,9 +5,16 @@ class Test < ApplicationRecord
   has_many :user_tests
   has_many :users, through: :user_tests
 
-  def self.sorted_category(category)
-    Test.joins('JOIN categories ON tests.category_id = categories.id')
-        .where(categories: { title: category })
-        .order(title: :desc).pluck(:title)
-  end
+  scope :sorted_category, -> (category) { joins(:category)
+                                         .where(categories: { title: category })
+                                         .order(title: :desc).pluck(:title) }
+  scope :simple_level, -> { where level: [0, 1] }
+  scope :middle_level, -> { where level: 2..4 }
+  scope :hard_level, -> { where level: 5..Float::INFINITY }
+  scope :tests_with_level_for_user, -> (difficulty, id) { joins(:user_tests)
+                                                          .where(level: difficulty,
+                                                                 user_tests: { user_id: id })}
+
+  validates :title, presence: true, uniqueness: { scope: :level }
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 end
