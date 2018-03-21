@@ -13,8 +13,8 @@ class Test < ApplicationRecord
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
   def self.sorted_category(category)
-    Test.joins(:category)
-        .where(categories: { title: category })
-        .order(title: :desc).pluck(:title)
+    joins(:category)
+    .where(categories: { title: category })
+    .order(title: :desc).pluck(:title)
   end
 end

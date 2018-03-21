@@ -6,6 +6,6 @@ class User < ApplicationRecord
   validates :name, :email, presence: true
 
   def tests_with_level(difficulty)
-    Test.joins(:users).where(level: difficulty, users: { id: id })
+    tests.where( level: difficulty )
   end
 end
