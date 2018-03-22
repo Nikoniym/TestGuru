@@ -7,5 +7,3 @@ h1 Заполните форму
   = f.select :category_id, Category.all.collect { |category| [category.title, category.id]}
   br
   = f.button 'Создать'
-
-  /= f.select( 'test', 'category_id', Category.all.collect { |category| [category.title, category.id]})
