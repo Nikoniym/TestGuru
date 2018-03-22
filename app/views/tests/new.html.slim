@@ -1,0 +1,11 @@
+h1 Заполните форму
+= form_for @test do |f|
+  = f.text_field :title
+  br
+  = f.text_field :level
+  br
+  = f.select :category_id, Category.all.collect { |category| [category.title, category.id]}
+  br
+  = f.button 'Создать'
+
+  /= f.select( 'test', 'category_id', Category.all.collect { |category| [category.title, category.id]})

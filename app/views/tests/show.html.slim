@@ -1,0 +1,6 @@
+h1 = @test.title
+ul
+  - @test.questions.each do |question|
+    li = question.body
+
+= link_to 'Назад к тестам', tests_path
