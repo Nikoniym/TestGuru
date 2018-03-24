@@ -13,10 +13,12 @@ class TestsController < ApplicationController
   end
 
   def create
-    test = Test.new(test_params)
-    test.author_id = 1
-    if test.save!
-      redirect_to  test_path(test)
+    @test = Test.new(test_params)
+    @test.author_id = 1
+    if @test.save
+      redirect_to  test_path(@test)
+    else
+      render :new
     end
   end
 

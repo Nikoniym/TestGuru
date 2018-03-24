@@ -1,8 +1,18 @@
 h1 Заполните форму
 = form_for @test do |f|
+  - if @test.errors.any?
+    ul
+      - @test.errors.full_messages.each do |msg|
+        li = msg
+  = f.label 'Название теста:'
+  br
   = f.text_field :title
   br
+  = f.label 'Уровень:'
+  br
   = f.text_field :level
+  br
+  = f.label 'Категория:'
   br
   = f.select :category_id, Category.all.collect { |category| [category.title, category.id]}
   br
