@@ -1,0 +1,13 @@
+h1 = @test.title
+= link_to 'Создать вопрос', new_test_question_path(@test)
+table
+  tr
+    th Вопрос
+
+  - @test.questions.each do |question|
+    tr
+      td = question.body
+      td = link_to 'Показать', question_path(question)
+      td = link_to 'Удалить', question_path(question), method: :delete, data: {confirm: 'Вы уверены?'}
+
+= link_to 'Назад к тестам', tests_path

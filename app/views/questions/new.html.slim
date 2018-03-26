@@ -1,0 +1,11 @@
+h1 Заполните форму
+= form_for [@test, @question] do |f|
+  - if @question.errors.any?
+    ul
+      - @question.errors.full_messages.each do |msg|
+        li = msg
+  = f.label 'Вопрос:'
+  br
+  = f.text_field :body
+  br
+  = f.button 'Создать'
