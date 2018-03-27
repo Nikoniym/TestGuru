@@ -1,0 +1,8 @@
+h1 = question_header
+= form_for [@test, @question] do |f|
+  = render 'shared/errors', resource: @question
+  = f.label :body, 'Вопрос:'
+  br
+  = f.text_field :body, id: :title_body
+  br
+  = f.button action_name == 'new' ? 'Создать' : 'Изменить'

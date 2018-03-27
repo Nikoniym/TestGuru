@@ -3,11 +3,9 @@ h1 = @test.title
 table
   tr
     th Вопрос
+    th colspan='3' Действия
+  = render @test.questions
 
-  - @test.questions.each do |question|
-    tr
-      td = question.body
-      td = link_to 'Показать', question_path(question)
-      td = link_to 'Удалить', question_path(question), method: :delete, data: {confirm: 'Вы уверены?'}
-
-= link_to 'Назад к тестам', tests_path
+= link_to 'Назад к тестам ', tests_path
+span |
+= link_to ' Изменить', edit_test_path(@test)
