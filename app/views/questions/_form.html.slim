@@ -1,4 +1,4 @@
-h1 = question_header
+h1 = question_header(@question)
 = form_for [@test, @question] do |f|
   = render 'shared/errors', resource: @question
   = f.label :body, 'Вопрос:'

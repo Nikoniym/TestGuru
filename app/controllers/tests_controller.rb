@@ -29,7 +29,7 @@ class TestsController < ApplicationController
     if @test.update(test_params)
       redirect_to  test_path(@test)
     else
-      render :new
+      render :edit
     end
   end
 
