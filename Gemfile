@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim'
 gem 'pg'
 gem 'rake', '~> 12.3.0'
+gem 'loofah', '~> 2.2', '>= 2.2.2'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
