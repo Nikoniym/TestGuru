@@ -3,4 +3,5 @@ h1 = @question.body
   ul
     - @question.answers.each do |answer|
       li = answer.body
-= link_to 'Назад', :back
+= link_to 'Назад к вопросам теста', :back
+= link_to 'Назад к тестам', tests_path
