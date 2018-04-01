@@ -1,7 +1,9 @@
-h1 = @question.body
+h1 = @question.test.title
+p = @question.body
+h2 Answer
+= link_to 'Создать новый ответ', new_question_answer_path(@question)
 - if @question.answers.present?
-  ul
-    - @question.answers.each do |answer|
-      li = answer.body
-= link_to 'Назад к вопросам теста', :back
+  ol
+    = render @question.answers
+= link_to 'Назад к вопросам теста', test_path(@question.test)
 = link_to 'Назад к тестам', tests_path
