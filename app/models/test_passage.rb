@@ -11,10 +11,6 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
-  def percent!
-    (correct_question.to_f / correct_count.to_f * 100).round
-  end
-
   def position_current_question
     if current_question.nil?
       question_count
@@ -30,6 +26,14 @@ class TestPassage < ApplicationRecord
   def accept!(answer_ids)
     self.correct_question += 1 if correct_answer?(answer_ids)
     save!
+  end
+
+  def passed?
+    percent >= 85
+  end
+
+  def percent
+    (correct_question.to_f / correct_count.to_f * 100).round
   end
 
   private

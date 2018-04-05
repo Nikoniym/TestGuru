@@ -1,0 +1,13 @@
+= form_with url: sessions_path, local: true do |form|
+  = flash_message(:alert)
+  p
+    = form.label :email
+    br
+    = form.text_field :email, id: :email
+  p
+    = form.label :password
+    br
+    = form.password_field :password, id: :password
+  p
+    = form.submit 'Enter'
+= link_to 'Signup', signup_path
