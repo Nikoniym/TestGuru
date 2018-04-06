@@ -3,7 +3,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    session[:user_id] = nil
   end
 
   def create
