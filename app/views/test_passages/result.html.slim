@@ -1,6 +1,6 @@
 h1 The #{@test_passage.test.title} Test was Completed!
-- if @test_passage.percent! >= 85
-  p.good Test  passed successfully! You scored #{@test_passage.percent!}%
+- if @test_passage.passed?
+  p.good Test  passed successfully! You scored #{@test_passage.percent}%
 - else
-  p.fail Test failed. You scored #{@test_passage.percent!}%
+  p.fail Test failed. You scored #{@test_passage.percent}%
 = link_to 'Tests list', tests_path

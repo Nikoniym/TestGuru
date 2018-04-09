@@ -29,11 +29,12 @@ gem 'slim'
 gem 'pg'
 # gem 'rake', '12.3.0'
 # gem 'erubi', '1.7.0'
-
+gem 'loofah', '~> 2.2', '>= 2.2.2'
+# gem 'rack-test', '0.8.3'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1', '>= 3.1.10'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
