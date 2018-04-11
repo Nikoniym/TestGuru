@@ -2,7 +2,4 @@ tr
   td = test.title
   td = test.level
   td = test.questions.count
-  td = link_to 'show', test_path(test)
-  td = link_to 'Edit', edit_test_path(test)
-  td = link_to 'Delete', test_path(test), method: :delete, data: { confirm: 'Вы уверены?' }
   td = button_to 'Start', start_test_path(test)

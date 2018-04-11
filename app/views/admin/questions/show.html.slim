@@ -1,0 +1,9 @@
+h1 = @question.test.title
+p = @question.body
+h2 Answer
+= link_to 'Создать новый ответ', new_admin_question_answer_path(@question)
+- if @question.answers.present?
+  ol
+    = render @question.answers
+= link_to 'Назад к вопросам теста', admin_test_path(@question.test)
+= link_to 'Назад к тестам', admin_tests_path

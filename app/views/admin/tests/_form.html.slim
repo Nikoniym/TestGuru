@@ -1,0 +1,14 @@
+= form_with model: [:admin, @test], local: true do |f|
+  = render 'shared/errors', resource: @test
+  = f.label :title, 'Название теста:'
+  br
+  = f.text_field :title, id: :test_title
+  br
+  = f.label :level, 'Уровень:'
+  br
+  = f.text_field :level, id: :test_level
+  br
+  = f.label 'Категория:'
+  = f.collection_select :category_id, Category.all, :id, :title, prompt: 'Выберите категорию'
+  br
+  = f.button action_name == 'new' ? 'Создать' : 'Изменить'

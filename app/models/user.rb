@@ -1,4 +1,14 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable,
+         :confirmable,
+         :registerable,
+         :recoverable,
+         :rememberable,
+         :trackable,
+         :validatable
+
   attr_reader :password
   attr_writer :password_confirmation
 
@@ -9,8 +19,6 @@ class User < ApplicationRecord
   validates :email, format: /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/,
                     uniqueness: true
 
-  has_secure_password
-
   def tests_with_level(difficulty)
     tests.where( level: difficulty )
   end
@@ -19,4 +27,7 @@ class User < ApplicationRecord
     test_passages.order(id: :desc).find_by(test_id: test.id)
   end
 
+  def full_name
+    [last_name, first_name].compact.join(' ')
+  end
 end
