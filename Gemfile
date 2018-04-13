@@ -30,9 +30,7 @@ gem 'pg'
 # gem 'rake', '12.3.0'
 # gem 'erubi', '1.7.0'
 gem 'loofah', '~> 2.2', '>= 2.2.2'
-# gem 'rack-test', '0.8.3'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'devise', '~> 4.2'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1', '>= 3.1.10'
 
@@ -45,6 +43,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'letter_opener'
 end
 
 group :development do

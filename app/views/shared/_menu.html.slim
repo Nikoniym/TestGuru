@@ -1,18 +1,20 @@
 nav
-  - if logged_in?  
+  - if user_signed_in?
     .message
       span
         ' Welcome,
-      b = current_user.name
+      b = current_user.email
       b  Guru
   .links
-    - if logged_in?
+    - if user_signed_in?
       = link_to 'Test Guru', root_path
       br
-      = link_to 'Exit', exit_path
+      = link_to 'Exit', destroy_user_session_path, method: :delete
+      br
+      = link_to 'Edit user', edit_user_registration_path
       br
 
-    = link_to 'Login', login_path
+    = link_to 'Login', new_user_session_path
     br
-    = link_to 'Registration', signup_path
+    = link_to 'Registration', new_user_registration_path
 

@@ -1,0 +1,5 @@
+tr
+  td = question.body
+  td = link_to 'Показать', admin_question_path(question)
+  td = link_to 'Изменить', edit_admin_question_path(question)
+  td = link_to 'Удалить', admin_question_path(question), method: :delete, data: {confirm: 'Вы уверены?'}

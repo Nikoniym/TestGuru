@@ -1,0 +1,8 @@
+tr
+  td = test.title
+  td = test.level
+  td = test.questions.count
+  td = link_to 'show', admin_test_path(test)
+  td = link_to 'Edit', edit_admin_test_path(test)
+  td = link_to 'Delete', admin_test_path(test), method: :delete, data: { confirm: 'Вы уверены?' }
+  
