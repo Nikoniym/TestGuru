@@ -28,7 +28,7 @@ class AnswersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get edit" do
+  test "should get zedit" do
     get edit_answer_url(@answer)
     assert_response :success
   end

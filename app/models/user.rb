@@ -30,4 +30,8 @@ class User < ApplicationRecord
   def full_name
     [last_name, first_name].compact.join(' ')
   end
+
+  def admin?
+    is_a? Admin
+  end
 end
