@@ -1,11 +1,12 @@
 h1 = @test.title
-= link_to 'Создать вопрос', new_admin_test_question_path(@test)
+= link_to  t('.create_question'), new_admin_test_question_path(@test)
 table
   tr
-    th Вопрос
-    th colspan='3' Действия
+    th = t '.questions'
+    th colspan='3' = t '.actions'
   = render @test.questions
 
-= link_to 'Назад к тестам ', admin_tests_path
-span |
-= link_to ' Изменить', edit_admin_test_path(@test)
+= link_to  t('helpers.back_tests'), admin_tests_path
+span
+  '  |
+= link_to t('helpers.edit'), edit_admin_test_path(@test)

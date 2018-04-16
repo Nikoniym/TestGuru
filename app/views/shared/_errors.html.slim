@@ -1,5 +1,5 @@
 - if resource.errors.any?
-  h2 #{pluralize(resource.errors.count, 'error')} detected:
+  h2 = t('.header', count: resource.errors.count)
   ul
     - resource.errors.full_messages.each do |msg|
       li = msg

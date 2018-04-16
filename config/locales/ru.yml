@@ -1,2 +1,74 @@
 ru:
-  hello: "Привет"
+  helpers:
+    submit:
+      test:
+        create: 'Создать тест'
+        update: 'Обновить тест'
+    label:
+      test:
+        title: 'Название'
+        level: 'Уровень'
+        category_id: 'Категория'
+    select:
+      prompt: 'Выберите'
+    confirm: 'Вы уверены?'
+    show: 'Показать'
+    edit: 'Изменить'
+    delete: 'Удалить'
+    back_tests: 'Назад к тестам'
+
+  admin:
+    tests:
+      create:
+        success: 'Тест успешно создан'
+      index:
+        create_test: 'Создать тест'
+        header: 'Доступные тесты'
+        actions: 'Действия'
+        title: 'Название теста'
+        level: 'Уровень'
+        count: 'Кол-во вопросов'
+      edit:
+        header: 'Изменить тест'
+      new:
+        header: 'Создать тест'
+      show:
+        questions: 'Вопросы'
+        actions: 'Действия'
+        create_question: 'Создать вопрос'
+
+
+  tests:
+    test:
+      start: 'Старт'
+    index:
+      header: 'Доступные тесты'
+      title: 'Название теста'
+      level: 'Уровень'
+      count: 'Кол-во вопросов'
+      start: 'Начать тест'
+
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+
+  shared:
+      errors:
+        header:
+          zero: "Обнаружено %{count} ошибок"
+          few: "Обнаружено %{count} ошибки"
+          one: "Обнаружена %{count} ошибка"
+          many: "Обнаружено %{count} ошибок"
+          other: "Обнаружено %{count} ошибки"
+
+  tests_mailer:
+    completed_test:
+      subject: 'Вы успешно завершили тест на TestGuru!'
+  activerecord:
+      models:
+        test: 'Тест'
+      attributes:
+        test:
+          title: 'Название'
+          level: 'Уровень'
+          category: 'Категория'
