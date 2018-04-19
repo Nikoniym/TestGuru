@@ -1,9 +1,9 @@
-h1 Тесты
-= link_to 'Создать тест', new_admin_test_path
+h1 = t '.header'
+= link_to t('.create_test'), new_admin_test_path
 table
   tr
-    th Название теста
-    th Уровень
-    th Кол-во вопросов
-    th colspan='3' Действия
+    th = t '.title'
+    th = t '.level'
+    th = t '.count'
+    th colspan='3' = t '.actions'
   = render @tests
