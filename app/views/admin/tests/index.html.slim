@@ -1,9 +1,10 @@
-h1 = t '.header'
-= link_to t('.create_test'), new_admin_test_path
-table
-  tr
-    th = t '.title'
-    th = t '.level'
-    th = t '.count'
-    th colspan='3' = t '.actions'
-  = render @tests
+h1.text-center = t '.header'
+.text-center = link_to t('.create_test'), new_admin_test_path, class: 'badge badge-primary'
+.row.mt-3.justify-content-center
+  table.table.table-bordered.col-10
+    tr
+      th = t '.title'
+      th.text-center = t '.level'
+      th.text-center = t '.count'
+      th.text-center colspan='3' = t '.actions'
+    = render @tests

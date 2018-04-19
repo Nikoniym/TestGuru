@@ -1,5 +1,5 @@
 tr
   td = test.title
-  td = test.level
-  td = test.questions.count
-  td = button_to t('.start'), start_test_path(test)
+  td.text-center = test.level
+  td.text-center = test.questions.count
+  td.text-center = button_to t('.start'), start_test_path(test), class: 'button btn btn-success'
