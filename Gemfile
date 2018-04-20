@@ -35,7 +35,9 @@ gem 'devise', '~> 4.2'
 gem 'rails-i18n', '~> 5.0.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1', '>= 3.1.10'
-
+# UI
+gem 'bootstrap', '~> 4.1.0'
+gem 'jquery-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

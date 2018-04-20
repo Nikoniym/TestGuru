@@ -1,8 +1,8 @@
 tr
   td = test.title
-  td = test.level
-  td = test.questions.count
-  td = link_to t('helpers.show'), admin_test_path(test)
-  td = link_to t('helpers.edit'), edit_admin_test_path(test)
-  td = link_to t('helpers.delete'), admin_test_path(test), method: :delete, data: { confirm: t('helpers.confirm') }
+  td.text-center = test.level
+  td.text-center = test.questions.count
+  td.text-center = link_to t('helpers.show'), admin_test_path(test), class: 'badge badge-success'
+  td.text-center = link_to t('helpers.edit'), edit_admin_test_path(test), class: 'badge badge-warning'
+  td.text-center = link_to t('helpers.delete'), admin_test_path(test), method: :delete, data: { confirm: t('helpers.confirm') }, class: 'badge badge-danger'
   

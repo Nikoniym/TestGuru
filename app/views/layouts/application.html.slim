@@ -2,11 +2,14 @@ doctype html
 html
   head
     title TestGuru
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
     = csrf_meta_tags
     = stylesheet_link_tag    'application', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    = render 'shared/flash'
     = render 'shared/menu'
-    = yield
-    = render 'shared/footer'
+    .container
+      = render 'shared/flash'
+      = yield
+      = render 'shared/footer'
