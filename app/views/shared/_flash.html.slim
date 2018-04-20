@@ -1,2 +1,2 @@
 - flash.each do |key, message|
-  .mt-3 = content_tag :p, message, class: "alert #{key == 'notice' ? 'alert-success' : 'alert-danger'}"
+  .mt-3 = content_tag :p, message, class: "alert #{flash_message(key)}"
