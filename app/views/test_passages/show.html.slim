@@ -8,4 +8,5 @@ b Question: #{@test_passage.position_current_question}/#{@test_passage.question_
     p
       = b.check_box id: "answer_ids_#{b.object.id}"
       = b.label
+  p = link_to 'Gist Question', gist_test_passage_path(@test_passage), method: :post
   = form.submit 'next'

@@ -17,6 +17,7 @@
 /tmp/*
 !/log/.keep
 config/database.yml
+.env
 !/tmp/.keep
 
 /node_modules
