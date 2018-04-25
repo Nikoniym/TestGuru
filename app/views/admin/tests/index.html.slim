@@ -3,7 +3,10 @@ h1.text-center = t '.header'
 .row.mt-3.justify-content-center
   table.table.table-bordered.col-10
     tr
-      th = t '.title'
+      th.sort-by-title.pointer
+        = t '.title'
+        = octicon 'arrow-up', class: 'text-success hide'
+        = octicon 'arrow-down', class: 'text-success hide'
       th.text-center = t '.level'
       th.text-center = t '.count'
       th.text-center colspan='3' = t '.actions'

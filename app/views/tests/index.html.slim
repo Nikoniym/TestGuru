@@ -1,8 +1,11 @@
 h1.text-center = t 'tests.index.header'
 .row.mt-3.justify-content-center
-  table.table-hover.col-10
+  table.table.table-bordered.col-10
     tr
-      th scope="col" = t '.title'
+      th.sort-by-title.pointer scope="col"
+        = t '.title'
+        = octicon 'arrow-up', class: 'text-success hide'
+        = octicon 'arrow-down', class: 'text-success hide'
       th.text-center scope="col" = t '.level'
       th.text-center scope="col" = t '.count'
       th.text-center scope="col" = t '.start'
