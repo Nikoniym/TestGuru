@@ -1,0 +1,9 @@
+h1.text-center Gists
+.row.mt-3.justify-content-center
+  table.table.table-bordered.col-10
+    tr
+      th Question
+      th Url
+      th User email
+    = render @gists
+.text-center = link_to 'Back', :back, class: 'badge badge-primary'

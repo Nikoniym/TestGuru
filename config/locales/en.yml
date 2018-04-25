@@ -1,4 +1,5 @@
 en:
+  gist: "A question about %{test_title} from TestGuru"
   helpers:
     submit:
       test:
@@ -37,6 +38,9 @@ en:
         actions: 'Actions'
         create_question: 'Create question'
 
+  services:
+    gist_question_service:
+      gist: "A question about %{test_title} from TestGuru"
 
   tests:
     test:
@@ -50,7 +54,9 @@ en:
   test_passages:
       result:
         header: "The %{title} was Completed!"
-
+      gist:
+        success: 'Gist successfully saved to url: %{url}'
+        failure: 'An error occurred while saving'
   shared:
     errors:
       header:

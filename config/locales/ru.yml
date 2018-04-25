@@ -1,4 +1,5 @@
 ru:
+  gist: "Вопрос из теста %{test_title} проекта TestGuru"
   helpers:
     submit:
       test:
@@ -51,7 +52,12 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
-
+    gist:
+      success: 'Gist успешно сохранен по адресу %{url}'
+      failure: 'Во время сохранения произошла ошибка'
+  services:
+    gist_question_service:
+      gist: "Вопрос из теста %{test_title} проэкта TestGuru"
   shared:
       errors:
         header:

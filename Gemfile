@@ -38,6 +38,9 @@ gem 'bcrypt', '~> 3.1', '>= 3.1.10'
 # UI
 gem 'bootstrap', '~> 4.1.0'
 gem 'jquery-rails'
+gem 'faraday'
+gem 'octokit', '~> 4.0'
+gem 'dotenv-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
