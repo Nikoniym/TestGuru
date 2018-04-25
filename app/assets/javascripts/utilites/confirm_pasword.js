@@ -2,8 +2,10 @@ document.addEventListener('turbolinks:load', function () {
   var password = document.querySelector('#user_password')
   var password_confirm = document.querySelector('#user_password_confirmation')
 
-  if (password) { password.addEventListener('keyup', checkPassword) }
-  if (password_confirm) { password_confirm.addEventListener('keyup', checkPassword) }
+  if (password && password_confirm) {
+    password.addEventListener('keyup', checkPassword)
+    password_confirm.addEventListener('keyup', checkPassword)
+  }
 })
 
 function checkPassword() {
@@ -25,3 +27,4 @@ function checkPassword() {
     error.classList.add('hide')
   }
 }
+
