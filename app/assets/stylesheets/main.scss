@@ -1,8 +1,14 @@
-p {
-  &.good {
-    color: #4ba83b;
-  }
-  &.fail {
-    color: #cc0000;
-  }
+.good {
+  color: #4ba83b;
+}
+.fail {
+  color: #cc0000;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
 }

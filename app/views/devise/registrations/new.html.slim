@@ -23,6 +23,8 @@ h2 Become a Guru
     = f.label :password_confirmation
     br
     = f.password_field :password_confirmation, autocomplete: "off"
+    = octicon "circle-slash", class: 'hide fail'
+    = octicon "check", class: 'hide good'
   .actions
     = f.submit "Sign up"
 = render "devise/shared/links"

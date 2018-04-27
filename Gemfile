@@ -41,6 +41,7 @@ gem 'jquery-rails'
 gem 'faraday'
 gem 'octokit', '~> 4.0'
 gem 'dotenv-rails'
+gem 'octicons_helper'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
