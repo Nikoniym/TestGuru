@@ -37,6 +37,8 @@ en:
         questions: 'Questions'
         actions: 'Actions'
         create_question: 'Create question'
+      form_inline:
+        submit: 'Ok'
 
   services:
     gist_question_service:

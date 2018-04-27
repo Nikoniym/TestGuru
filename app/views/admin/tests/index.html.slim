@@ -1,5 +1,6 @@
 h1.text-center = t '.header'
 .text-center = link_to t('.create_test'), new_admin_test_path, class: 'badge badge-primary'
+.errors = render 'shared/errors', resource: @test
 .row.mt-3.justify-content-center
   table.table.table-bordered.col-10
     tr
