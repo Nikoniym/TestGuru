@@ -37,6 +37,8 @@ ru:
         questions: 'Вопросы'
         actions: 'Действия'
         create_question: 'Создать вопрос'
+      form_inline:
+        submit: 'Ок'
 
 
   tests:
