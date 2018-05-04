@@ -3,7 +3,7 @@ b = @test_passage.current_question.body
 br
 .progress
   = content_tag :div,
-                '',
+                nil,
                 class: 'progress-bar progress-bar-striped',
 
                 data: { question_position: @test_passage.position_current_question,
