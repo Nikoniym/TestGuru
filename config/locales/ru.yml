@@ -40,7 +40,9 @@ ru:
       form_inline:
         submit: 'Ок'
 
-
+  feedbacks:
+    create:
+      success: 'Собщение отправлено администратору'
   tests:
     test:
       start: 'Старт'
