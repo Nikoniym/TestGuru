@@ -3,8 +3,9 @@ categories = Category.create!([{ title: 'Ruby' },
                  { title: 'Python' },
                  { title: 'HTML' }])
 
-users = User.create!([{ name: 'Nick' },
-             { name: 'Alex' }])
+users = User.create!([{ first_name: 'Nick', last_name: 'Korataev', email: 'qwer@zx.ru', password: 'qwerez'},
+             { first_name: 'Alex', last_name: 'Korataev', email: 'q@zx.ru', password: 'qwerez' }])
+Admin.create!([{first_name: 'Max', last_name: 'Korataev', email: 'worldnillin@gmail.com', password: 'qwerez'}])
 
 tests = Test.create!([{ title: 'OOP', category_id: categories[0].id, author_id: users[0].id },
                       { title: 'React', level: 4, category_id: categories[1].id, author_id: users[0].id },
