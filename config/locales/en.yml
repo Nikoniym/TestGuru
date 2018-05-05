@@ -5,6 +5,8 @@ en:
       test:
         create: 'Create Test'
         update: 'Update Test'
+      feedback:
+        create: 'Send'
     label:
       test:
         title: 'Title'

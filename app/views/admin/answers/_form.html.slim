@@ -1,11 +1,14 @@
-= form_with model: [:admin, @question, @answer], local: true do |form|
-  = render 'shared/errors', resource: @answer
-  div
-    = form.label :body
-    br
-    = form.text_area :body, id: :answer_body, rows: 7, cols: 60
-  div
-    = form.label :correct
-    = form.check_box :correct, id: :answer_correct
-  .actions
-    = form.submit
+.row.justify-content-center.mt-3
+  .col.col-md-4
+    .form-group
+      = form_with model: [:admin, @question, @answer], local: true do |form|
+        = render 'shared/errors', resource: @answer
+        div
+          = form.label :body
+          br
+          = form.text_area :body, id: :answer_body, rows: 7, cols: 60, class: 'form-control'
+        .form-check
+          = form.check_box :correct, id: :answer_correct, class: 'form-check-input'
+          = form.label :correct, class: 'form-check-label'
+        .actions
+          = form.submit class: 'btn btn-primary'

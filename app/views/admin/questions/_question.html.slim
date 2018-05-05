@@ -1,5 +1,5 @@
 tr
   td = question.body
-  td = link_to t('helpers.show'), admin_question_path(question)
-  td = link_to t('helpers.edit'), edit_admin_question_path(question)
-  td = link_to t('helpers.delete'), admin_question_path(question), method: :delete, data: {confirm: t('helpers.confirm')}
+  td.text-center = link_to t('helpers.show'), admin_question_path(question), class: 'badge badge-success'
+  td.text-center = link_to t('helpers.edit'), edit_admin_question_path(question), class: 'badge badge-success'
+  td.text-center = link_to t('helpers.delete'), admin_question_path(question), method: :delete, data: {confirm: t('helpers.confirm')}, class: 'badge badge-success'

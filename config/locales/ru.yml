@@ -5,11 +5,18 @@ ru:
       test:
         create: 'Создать тест'
         update: 'Обновить тест'
+      feedback:
+        create: 'Отправить'
     label:
+      answer:
+        correct: 'Правильный ответ'
       test:
         title: 'Название'
         level: 'Уровень'
         category_id: 'Категория'
+      feedback:
+        title: 'Тема'
+        body: 'Сообщение'
     select:
       prompt: 'Выберите'
     confirm: 'Вы уверены?'
