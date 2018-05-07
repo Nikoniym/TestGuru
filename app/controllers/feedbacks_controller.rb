@@ -4,8 +4,7 @@ class FeedbacksController < ApplicationController
   end
 
   def create
-    @feedback = Feedback.new(feedback_params)
-    @feedback.user = current_user
+    @feedback = current_user.feedbacks.new(feedback_params)
     if @feedback.save
       FeedbackMailer.send_feedback(@feedback).deliver_now
       redirect_to  new_feedback_path, notice: t('.success')
