@@ -1,14 +1,18 @@
-= form_with model: [:admin, @test], local: true do |f|
-  = render 'shared/errors', resource: @test
-  = f.label :title
-  br
-  = f.text_field :title, id: :test_title
-  br
-  = f.label :level
-  br
-  = f.text_field :level, id: :test_level
-  br
-  = f.label :category_id
-  = f.collection_select :category_id, Category.all, :id, :title, prompt: I18n, id: :test_category_id
-  br
-  = f.button
+.row.justify-content-center.mt-3
+  .col.col-md-4
+    .form-group
+      = form_with model: [:admin, @test], local: true do |f|
+        = render 'shared/errors', resource: @test
+        = f.label :title
+        br
+        = f.text_field :title, id: :test_title, class: 'form-control'
+        br
+        = f.label :level
+        br
+        = f.text_field :level, id: :test_level, class: 'form-control'
+        br
+        = f.label :category_id
+        = f.collection_select :category_id, Category.all, :id, :title, prompt: I18n, id: :test_category_id, class: 'form-control'
+        br
+        br
+        .text-center = f.button class: 'btn btn-primary'

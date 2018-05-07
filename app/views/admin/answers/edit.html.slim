@@ -1,6 +1,8 @@
-h1 Editing Answer
-p = @answer.question.body
+h1.text-center Editing Answer
+.text-center
+  p = @answer.question.body
 = render 'form'
-= link_to 'Show', [:admin, @answer]
-'  |
-= link_to 'Back', admin_question_path(@answer.question)
+.text-center
+  = link_to 'Show', [:admin, @answer]
+  '  |
+  = link_to 'Back', admin_question_path(@answer.question)

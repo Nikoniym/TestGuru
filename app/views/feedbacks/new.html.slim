@@ -1,0 +1,14 @@
+.row.justify-content-center.mt-3
+  .col.col-md-6
+    h1.text-center Обратная связь
+    .form-group
+      = form_with model: @feedback, local: true do |form|
+        = render 'shared/errors', resource: @feedback
+        p
+          = form.label :title
+          = form.text_field :title, class: 'form-control'
+        p
+          = form.label :body
+          = form.text_area :body, class: 'form-control'
+        = form.submit class: 'btn btn-primary'
+.text-center = link_to t('helpers.back_tests'), tests_path

@@ -5,6 +5,8 @@ en:
       test:
         create: 'Create Test'
         update: 'Update Test'
+      feedback:
+        create: 'Send'
     label:
       test:
         title: 'Title'
@@ -44,6 +46,9 @@ en:
     gist_question_service:
       gist: "A question about %{test_title} from TestGuru"
 
+  feedbacks:
+    create:
+      success: 'the message sent to the administrator'
   tests:
     test:
       start: 'Start'
