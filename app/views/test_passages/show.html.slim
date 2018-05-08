@@ -1,4 +1,6 @@
 h1 Pass the #{@test_passage.test.title} Test
+- if @test_passage.timer?
+  #my_timer = l @test_passage.timer, format: :short
 b = @test_passage.current_question.body
 br
 .progress
