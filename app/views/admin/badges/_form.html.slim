@@ -11,9 +11,9 @@
         = form.text_field :title, class: 'form-control'
       p
         = form.label :rule
-        = form.select :rule, options_for_select([['После прохождения всех тестов категории', 1],
-                                                ['После прохождения теста с первой попытки', 2],
-                                                ['После прохождения теста определенного уровня', 3]],
+        = form.select :rule, options_for_select([['После прохождения всех тестов категории', 'category'],
+                                                ['После прохождения теста с первой попытки', 'first_time'],
+                                                ['После прохождения теста определенного уровня', 'level']],
                               selected: @badge.rule),
                               { prompt: true }, { class: 'form-control' }
       p

@@ -14,7 +14,6 @@ class Admin::BadgesController < Admin::BaseController
 
   def create
     @badge = Badge.new(badge_params)
-
     if @badge.save
       redirect_to  [:admin, @badge]
     else
@@ -38,7 +37,10 @@ class Admin::BadgesController < Admin::BaseController
   private
 
   def badge_params
-    params.require(:badge).permit(:title, :image_url, :rule, :parameter)
+    get_parameter = params.require(:badge).permit(:title, :image_url, :rule)
+    rule = get_parameter[:rule].to_sym
+    get_parameter[rule] = params[:badge][:parameter] if rule != :first_time
+    get_parameter
   end
 
   def find_badge
