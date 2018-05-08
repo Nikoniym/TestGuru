@@ -1,5 +1,5 @@
 class TestsController < ApplicationController
-  before_action :find_test, only: %i[show destroy zedit update start]
+  before_action :find_test, only: %i[show destroy edit update start]
 
   def index
     @tests = Test.all
