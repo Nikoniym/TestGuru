@@ -10,3 +10,5 @@ h1.text-center = t 'tests.index.header'
       th.text-center scope="col" = t '.count'
       th.text-center scope="col" = t '.start'
     = render @tests
+.text-center
+  = link_to 'Badges', badges_path, class: 'badge badge-primary'

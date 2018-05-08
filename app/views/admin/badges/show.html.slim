@@ -1,0 +1,7 @@
+= image_tag(@badge.image_url)
+p  = @badge.title
+p  = @badge.parameter
+= link_to t('edit'), edit_admin_badge_path(@badge)
+span
+  '  |
+= link_to t('back'), admin_badges_path

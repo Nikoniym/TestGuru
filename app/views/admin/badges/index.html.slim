@@ -1,0 +1,12 @@
+h1.text_center
+  = t('.all_badges')
+  = link_to t('.new_badge'), new_admin_badge_path, class: 'btn btn-primary'
+.row.mt-3.justify-content-center
+  table.table.table-bordered.col-10
+    thead
+      tr
+        th = t('.image')
+        th = t('.name')
+        th colspan="3" = t('.actions')
+    tbody
+      = render @badges

@@ -5,6 +5,11 @@ class TestPassagesController < ApplicationController
   end
 
   def result
+    if @test_passage.passed?
+      service = BadgeService.new(@test_passage)
+      service.call
+      flash.now[:notice] ="#{I18n.t('badge', count: service.badges.count)} #{service.badges_title}" if service.push_badge?
+    end
   end
 
   def gist
