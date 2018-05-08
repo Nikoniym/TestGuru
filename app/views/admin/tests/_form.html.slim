@@ -11,4 +11,7 @@
   = f.label :category_id
   = f.collection_select :category_id, Category.all, :id, :title, prompt: I18n, id: :test_category_id
   br
+  = f.label :timer
+  = f.time_field :timer
+  br
   = f.button
