@@ -2,14 +2,20 @@ class TestPassagesController < ApplicationController
   before_action :set_test_passage, only: %i[show update result gist]
 
   def show
-
   end
 
   def result
     if @test_passage.passed?
       service = BadgeService.new(@test_passage)
       service.call
-      flash.now[:notice] ="#{I18n.t('badge', count: service.badges.count)} #{service.badges_title}" if service.push_badge?
+      badges = service.badges
+      if badges.present?
+        service.badges.each do |badge|
+          @test_passage.user.badges.push(badge)
+        end
+
+        flash.now[:notice] ="#{I18n.t('badge', count: badges.count)} #{badges.pluck(:title).join(', ')}"
+      end
     end
   end
 
