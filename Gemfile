@@ -30,6 +30,7 @@ gem 'pg'
 # gem 'erubi', '1.7.0'
 gem 'loofah', '~> 2.2', '>= 2.2.2'
 gem 'devise', '~> 4.2'
+
 # localization
 gem 'rails-i18n', '~> 5.0.0'
 # Use ActiveModel has_secure_password

@@ -1,4 +1,7 @@
 ru:
+  time:
+    formats:
+      short: "%H:%M:%S"
   gist: "Вопрос из теста %{test_title} проекта TestGuru"
   helpers:
     submit:
