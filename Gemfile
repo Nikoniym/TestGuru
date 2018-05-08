@@ -26,8 +26,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'slim'
 gem 'pg'
-# gem 'rake', '12.3.0'
-# gem 'erubi', '1.7.0'
+
 gem 'loofah', '~> 2.2', '>= 2.2.2'
 gem 'devise', '~> 4.2'
 
