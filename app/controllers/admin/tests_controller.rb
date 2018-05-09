@@ -46,7 +46,6 @@ class  Admin::TestsController < Admin::BaseController
       respond_to do |format|
         format.html { render "index" }
       end
-
     end
   end
 

@@ -26,35 +26,27 @@ class BadgeService
 
   def rule_level(badge)
     if @test.level == badge.level.to_i
-      test_count = Test.where(level: badge.level).count
-      current_tests = @user.tests.where(level: badge.level).uniq
+      tests_ids = Test.where(level: badge.level).pluck(:id)
+      current_tests = @user.test_passages.joins(:test).where(tests: { level: badge.level })
 
-      compare_unit(test_count, current_tests, badge) if test_count == current_tests.count
+      compare_unit(tests_ids, current_tests, badge)
     end
   end
 
   def rule_category(badge)
     if @test.category.title == badge.category
-      test_count = Test.joins(:category).where(categories: {title: badge.category}).count
-      current_tests = @user.tests.joins(:category).where(categories: {title: badge.category}).uniq
+      tests_ids = Test.joins(:category).where(categories: { title: badge.category }).pluck(:id)
+      current_tests = @user.test_passages.joins(:test => :category).where(tests: { categories: { title: badge.category } })
 
-      compare_unit(test_count, current_tests, badge) if test_count == current_tests.count
+      compare_unit(tests_ids, current_tests, badge)
     end
   end
 
-  def compare_unit(test_count, current_tests, badge)
-    test_passed_count = 0
+  def compare_unit(tests_ids, current_tests, badge)
+    current_tests_passed = current_tests.select { |test| test.passed? }
 
-    current_tests.each do |test|
-      passed_count = false
-
-      test.test_passages.where(user: @user).each do |test_passage|
-        passed_count = true if test_passage.passed?
-      end
-
-      test_passed_count += 1 if passed_count
+    if tests_ids.sort == current_tests_passed.pluck(:test_id).uniq.sort && !@user.badges.include?(badge)
+      @badges << badge
     end
-
-    @badges << badge if test_count ==  test_passed_count
   end
 end
