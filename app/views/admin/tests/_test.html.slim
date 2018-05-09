@@ -4,7 +4,7 @@ tr
     = render 'form_inline', test: test == @test ? @test : test
   td.align-middle.text-center = test.level
   td.align-middle.text-center = test.questions.count
-  td.align-middle.text-center = l test.timer, format: :short if test.timer?
+  td.align-middle.text-center = test.timer
   td.align-middle.text-center = link_to t('helpers.show'), admin_test_path(test), class: 'badge badge-success'
   td.align-middle.text-center
     = link_to t('helpers.edit'),

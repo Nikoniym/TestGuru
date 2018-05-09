@@ -46,7 +46,7 @@ class TestPassage < ApplicationRecord
 
   def time_over?
     if timer?
-      timer <= Time.new(2000,01,01,0,0,0)
+      timer <= 0
     else
       false
     end

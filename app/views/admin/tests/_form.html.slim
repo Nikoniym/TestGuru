@@ -15,7 +15,7 @@
         = f.collection_select :category_id, Category.all, :id, :title, prompt: I18n, id: :test_category_id, class: 'form-control'
         br
           = f.label :timer
-          = f.time_field :timer
+          = f.text_field :timer, class: 'form-control'
         br
         .text-center = f.button class: 'btn btn-primary'
 
