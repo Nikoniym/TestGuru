@@ -1,0 +1,22 @@
+.row.justify-content-center
+  .col.col-md-5.form-group
+    = form_with model: [:admin, @badge], local: true do |form|
+      = render 'shared/errors', resource: @badge
+
+      p
+        = form.label :image_url
+        = form.text_field :image_url, class: 'form-control'
+      p
+        = form.label :title
+        = form.text_field :title, class: 'form-control'
+      p
+        = form.label :rule
+        = form.select :rule, options_for_select([['После прохождения всех тестов категории', 'category'],
+                                                ['После прохождения теста с первой попытки', 'first_time'],
+                                                ['После прохождения теста определенного уровня', 'level']],
+                              selected: @badge.rule),
+                              { prompt: true }, { class: 'form-control' }
+      p
+        = form.label :parameter
+        = form.text_field :parameter, class: 'form-control'
+      = form.submit class: 'btn btn-primary'

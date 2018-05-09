@@ -36,6 +36,22 @@ class TestPassage < ApplicationRecord
     (correct_question.to_f / correct_count.to_f * 100).round
   end
 
+  def timer?
+    test.timer.present?
+  end
+
+  def timer
+    test.timer - (Time.current - created_at)
+  end
+
+  def time_over?
+    if timer?
+      timer <= Time.new(2000,01,01,0,0,0)
+    else
+      false
+    end
+  end
+
   private
 
   def correct_count

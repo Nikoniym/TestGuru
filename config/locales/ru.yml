@@ -1,5 +1,13 @@
 ru:
+  time:
+    formats:
+      short: "%H:%M:%S"
   gist: "Вопрос из теста %{test_title} проекта TestGuru"
+  badge:
+    one: "Получена %{count} награда!"
+    many: "Получены %{count} награды!"
+    few: "Получены %{count} награды!"
+    other: "Получены %{count} награды!"
   helpers:
     submit:
       test:

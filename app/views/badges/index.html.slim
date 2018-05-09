@@ -1,0 +1,7 @@
+h1 Награды
+ol
+  - @badges.each do |badge|
+    li
+      = image_tag((badge.image_url), class: 'image')
+      = badge.title
+= link_to t('helpers.back_tests'), tests_path

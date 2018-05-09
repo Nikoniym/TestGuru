@@ -10,6 +10,10 @@ h1.text-center = t '.header'
         = octicon 'arrow-down', class: 'text-success hide'
       th.text-center = t '.level'
       th.text-center = t '.count'
+      th.text-center = t '.timer'
       th.text-center colspan='3' = t '.actions'
     = render @tests
-.text-center = link_to 'Gists', admin_gists_path, class: 'badge badge-primary'
+.text-center
+  = link_to 'Gists', admin_gists_path, class: 'badge badge-primary'
+  '
+  = link_to 'Badges', admin_badges_path, class: 'badge badge-primary'

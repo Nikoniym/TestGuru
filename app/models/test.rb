@@ -17,4 +17,8 @@ class Test < ApplicationRecord
     .where(categories: { title: category })
     .order(title: :desc).pluck(:title)
   end
+
+  def timer?
+    timer.present?
+  end
 end

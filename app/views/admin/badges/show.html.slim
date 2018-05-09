@@ -1,0 +1,10 @@
+= image_tag(@badge.image_url, class: 'image')
+p  = @badge.title
+- if @badge.level
+  p  = @badge.level
+- if @badge.category
+  p  = @badge.category
+= link_to t('edit'), edit_admin_badge_path(@badge)
+span
+  '  |
+= link_to t('back'), admin_badges_path
