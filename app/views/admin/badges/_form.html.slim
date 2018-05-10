@@ -14,7 +14,7 @@
         = form.select :rule, options_for_select([['После прохождения всех тестов категории', 'category'],
                                                 ['После прохождения теста с первой попытки', 'first_time'],
                                                 ['После прохождения теста определенного уровня', 'level']],
-                              selected: false),
+                                                ),
                               { prompt: true }, { class: 'form-control' }
       p
         = form.label :parameter
