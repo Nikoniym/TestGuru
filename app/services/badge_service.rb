@@ -1,4 +1,6 @@
 class BadgeService
+  attr_reader :badges
+
   def initialize(test_passage)
     @test_passage = test_passage
     @test = test_passage.test
@@ -10,10 +12,6 @@ class BadgeService
     Badge.find_each do |badge|
         send "rule_#{badge.rule}", badge
     end
-  end
-
-  def badges
-    @badges
   end
 
   private

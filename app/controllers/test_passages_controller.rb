@@ -8,13 +8,13 @@ class TestPassagesController < ApplicationController
     if @test_passage.passed?
       service = BadgeService.new(@test_passage)
       service.call
-      badges = service.badges
-      if badges.present?
-        service.badges.each do |badge|
+      achieved_badges = service.badges
+      if achieved_badges.present?
+        achieved_badges.each do |badge|
           @test_passage.user.badges.push(badge)
         end
 
-        flash.now[:notice] ="#{I18n.t('badge', count: badges.count)} #{badges.pluck(:title).join(', ')}"
+        flash.now[:notice] ="#{I18n.t('badge', count: achieved_badges.count)} #{achieved_badges.pluck(:title).join(', ')}"
       end
     end
   end
@@ -33,13 +33,17 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    @test_passage.accept!(params[:answer_ids])
-
-    if @test_passage.completed? || @test_passage.time_over?
-      TestsMailer.completed_test(@test_passage).deliver_now
+    if @test_passage.time_over?
       redirect_to result_test_passage_path(@test_passage)
     else
-      render :show
+      @test_passage.accept!(params[:answer_ids])
+
+      if @test_passage.completed?
+        TestsMailer.completed_test(@test_passage).deliver_now
+        redirect_to result_test_passage_path(@test_passage)
+      else
+        render :show
+      end
     end
   end
 
