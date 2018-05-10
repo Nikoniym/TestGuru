@@ -37,10 +37,7 @@ class Admin::BadgesController < Admin::BaseController
   private
 
   def badge_params
-    get_parameter = params.require(:badge).permit(:title, :image_url, :rule)
-    rule = get_parameter[:rule].to_sym
-    get_parameter[rule] = params[:badge][:parameter] if rule != :first_time
-    get_parameter
+    params.require(:badge).permit(:title, :image_url, :rule, :parameter)
   end
 
   def find_badge

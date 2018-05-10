@@ -28,8 +28,7 @@ ActiveRecord::Schema.define(version: 20180508110546) do
     t.string "title"
     t.string "image_url"
     t.string "rule"
-    t.string "level"
-    t.string "category"
+    t.string "parameter"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -86,7 +85,7 @@ ActiveRecord::Schema.define(version: 20180508110546) do
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.bigint "author_id"
-    t.time "timer"
+    t.integer "timer"
     t.index ["author_id"], name: "index_tests_on_author_id"
     t.index ["category_id"], name: "index_tests_on_category_id"
     t.index ["title", "level"], name: "index_tests_on_title_and_level", unique: true
