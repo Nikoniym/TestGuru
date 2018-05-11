@@ -10,9 +10,9 @@ class TestPassagesController < ApplicationController
       service.call
       achieved_badges = service.badges
       if achieved_badges.present?
-        achieved_badges.each do |badge|
-          @test_passage.user.badges.push(badge)
-        end
+
+        @test_passage.user.badges.push(achieved_badges)
+
 
         flash.now[:notice] ="#{I18n.t('badge', count: achieved_badges.count)} #{achieved_badges.pluck(:title).join(', ')}"
       end

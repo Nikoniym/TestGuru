@@ -6,7 +6,5 @@ class Badge < ApplicationRecord
     parameter
   end
 
-  def category
-    parameter
-  end
+  alias :category :level
 end
