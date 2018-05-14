@@ -45,11 +45,7 @@ class TestPassage < ApplicationRecord
   end
 
   def time_over?
-    if timer?
-      timer <= 0
-    else
-      false
-    end
+    timer? && timer <= 0
   end
 
   private
